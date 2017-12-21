@@ -1,0 +1,13 @@
+<% @projects.each do |project|%>
+  <p>
+  Title
+  <%= project.title%>
+  </p>
+   <p>
+   description
+  <%= project.description%>
+   <p>
+   <%= link_to 'display' , display_my_path(gh: project)%>
+   <%= link_to 'remove' , remove_path(rm: project)%>
+<%end%>
+

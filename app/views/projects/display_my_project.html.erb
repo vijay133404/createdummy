@@ -1,0 +1,14 @@
+<%= @aa.title%>
+<%= @aa.description%>
+<% @aa.comments.each do |comm| %>
+<%= comm.body %>
+<%end%>
+
+<%=form_for(:comment,url: '/blog/comment',:html => {:class => 'generalform'},method: :post) do |f|%>
+   <%= f.hidden_field :my_project_id, value: @aa.id %>
+   <%= f.label :body %>
+   <%= f.text_field :body %>
+  <%= f.submit 'create comment'%>
+
+<%end%>
+
